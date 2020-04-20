@@ -23,7 +23,7 @@ for x in range (1, numberofstudents):
     gpa_cum = round(float(gpa_cum)*.1,2)
     absenses = random.choice(open('absences.txt').read().split()).strip()
     gpa_diff = int(gpa_cum)-int(gpa_sem)
-    gpa_diff = round(gpa_diff*.1,2)∏
+    gpa_diff = round(gpa_diff*.1,2)
     account_paid = random.choice(open('account_paid.txt').read().split()).strip()
 
     username = firstname + '_' + middlename + '_' + lastname  
