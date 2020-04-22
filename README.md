@@ -17,7 +17,6 @@ brew install python
 ### Installing
 
 Download and run.
-```
 
 Example Output:
 ```
