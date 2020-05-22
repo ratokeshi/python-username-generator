@@ -1,18 +1,47 @@
 import random
-import os
-import time
-import sys
-numberofstudents = 55
+import os, argparse
+import time, datetime
+import sys, getopt
 
+# Without an argument, this script will create 42 new entries. The entries are called students but it is irrelavant.  They are really users for the purposes of this script.
+numberofstudents = 42
 
-studentfile = int(time.time())
+# To guarantee unique ID's we are using time.  But if this script is running in different locations simultaneously or the number of users is > 100 then ther is the posibility of overlaping id numbers.
+
+from datetime import datetime
+now=datetime.now() 
+centisecond=now.microsecond*100
+studentfile = int(time.time()*100+centisecond)
 studentbase = studentfile*100
-
-
+print ("The first record ID number is: ")
 print (studentbase)
 
-for x in range (1, numberofstudents):
-    studentbase = studentbase + 1
+def main(argv):
+   inputfile = ''
+   outputfile = ''
+   try:
+      opts, args = getopt.getopt(argv,"hi:o:",["ifile=","ofile="])
+   except getopt.GetoptError:
+      print ('random_username.py -i <inputfile> -o <outputfile>')
+      sys.exit(2)
+   for opt, arg in opts:
+      if opt == '-h':
+         print ('random_username.py -i <inputfile> -o <outputfile>')
+         sys.exit()
+      elif opt in ("-i", "--ifile"):
+         inputfile = arg
+      elif opt in ("-o", "--ofile"):
+         outputfile = arg
+   print ('Input file is "', inputfile)
+   print ('Output file is "', outputfile)
+
+if __name__ == "__main__":
+   main(sys.argv[1:])
+
+
+
+for x in range (0, numberofstudents):
+    
     firstname = (random.choice(open('firstnames.txt', 'r').read().split()).strip()).capitalize()
     middlename = (random.choice(open('firstnames.txt').read().split()).strip()).capitalize()
     lastname = (random.choice(open('lastnames.txt').read().split()).strip()).capitalize()
@@ -31,5 +60,5 @@ for x in range (1, numberofstudents):
   
 
     print (user_record)
-    
+    studentbase = studentbase + 1
     #sys.stdout=open()
