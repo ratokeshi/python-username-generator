@@ -8,6 +8,7 @@ parser = argparse.ArgumentParser()
 parser.parse_args()
 
 
+
 # Without an argument, this script will create 42 new entries. The entries are called students but it is irrelavant.  They are really users for the purposes of this script.
 numberofstudents = 42
 
@@ -22,29 +23,7 @@ print ("The first record ID number is: ")
 print (studentbase)
 
 
-#Old Arguments
 
-''' def main(argv):
-   inputfile = ''
-   outputfile = ''
-   try:
-      opts, args = getopt.getopt(argv,"hi:o:",["ifile=","ofile="])
-   except getopt.GetoptError:
-      print ('random_username.py -i <inputfile> -o <outputfile>')
-      sys.exit(2)
-   for opt, arg in opts:
-      if opt == '-h':
-         print ('random_username.py -i <inputfile> -o <outputfile>')
-         sys.exit()
-      elif opt in ("-i", "--ifile"):
-         inputfile = arg
-      elif opt in ("-o", "--ofile"):
-         outputfile = arg
-   print ('Input file is "', inputfile)
-   print ('Output file is "', outputfile)
-
-if __name__ == "__main__":
-   main(sys.argv[1:]) '''
 
 
 
