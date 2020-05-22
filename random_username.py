@@ -3,11 +3,11 @@ import os, argparse
 import time, datetime
 import sys, getopt
 
-#Test for arguments
+#Test for argumentspython rand      
 parser = argparse.ArgumentParser()
 parser.add_argument("--users", default=3, type=int,
                     help="Choose your own number of records to create. The default is 42.")
-parser.add_argument("--app", default='original', choices=['wordpress', 'drupal', 'moodle', 'all', 'custom', 'original'], 
+parser.add_argument("--app", default='original', choices=['wordpress', 'drupal', 'moodle', 'all', 'custom', 'original', 'w', 'd', 'o', 'm'], 
                     help="Current options are original and wordpress.  Coming soon: drupal, moodle, all, and custom.  The default is original.")                    
 parser.add_argument("--domain", default='r4t.net', 
                     help="The default domain is r4t.net.  Use this option to send all users to your own custom domain.")
@@ -57,7 +57,7 @@ for x in range (0, numberofstudents):
 
     if args.app=='original':
         user_record = str(studentbase) + ',' + lastname + ',' + firstname + ',' + major + ',' + str(gpa_sem) + ',' + str(absenses) + ',' + str(gpa_cum) + ',' + str(gpa_diff) + ',' + account_paid
-    elif args.app=='wordpress':
+    elif args.app=='wordpress' or args.app=='w':
         user_record = username + ',' + useremail + ',' + str(studentbase) + ',' + username + ',' + username + '.' + args.domain + ',' + user_registered + ',' + display_name + ',subscriber,' + username + ',' + firstname + ',' + lastname
     else:
         print("App value is not original.")    
