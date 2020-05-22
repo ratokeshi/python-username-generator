@@ -3,6 +3,11 @@ import os, argparse
 import time, datetime
 import sys, getopt
 
+#Test for arguments
+parser = argparse.ArgumentParser()
+parser.parse_args()
+
+
 # Without an argument, this script will create 42 new entries. The entries are called students but it is irrelavant.  They are really users for the purposes of this script.
 numberofstudents = 42
 
@@ -16,7 +21,10 @@ studentbase = studentfile*100
 print ("The first record ID number is: ")
 print (studentbase)
 
-def main(argv):
+
+#Old Arguments
+
+''' def main(argv):
    inputfile = ''
    outputfile = ''
    try:
@@ -36,7 +44,7 @@ def main(argv):
    print ('Output file is "', outputfile)
 
 if __name__ == "__main__":
-   main(sys.argv[1:])
+   main(sys.argv[1:]) '''
 
 
 
