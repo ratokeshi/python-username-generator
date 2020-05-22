@@ -5,12 +5,15 @@ import sys, getopt
 
 #Test for arguments
 parser = argparse.ArgumentParser()
-parser.parse_args()
+parser.add_argument("--users", default=42, type=int,
+                    help="Choose your own number of records to create. The default is 42.")
+args = parser.parse_args()
+
 
 
 
 # Without an argument, this script will create 42 new entries. The entries are called students but it is irrelavant.  They are really users for the purposes of this script.
-numberofstudents = 42
+numberofstudents = args.users
 
 # To guarantee unique ID's we are using time.  But if this script is running in different locations simultaneously or the number of users is > 100 then ther is the posibility of overlaping id numbers.
 
